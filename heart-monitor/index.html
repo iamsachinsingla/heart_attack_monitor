@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Monitor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Heart Monitor</h1>
+            <img src="./images/heartbeat.png" alt="Heartbeat Icon" class="header-image">
+        </header>
+        <div id="interview-section">
+            <div id="progress-bar">
+                <div id="progress"></div>
+            </div>
+            <form id="interviewForm">
+                <div id="question-container" class="form-group">
+                    <label id="question-label"></label>
+                    <div id="input-container"></div>
+                </div>
+                <button type="button" id="next-btn" disabled>Next</button>
+            </form>
+        </div>
+        <div id="bmi-calculator" class="sidebar">
+            <h3>BMI Calculator</h3>
+            <div class="bmi-form">
+                <label for="height-unit">Height Unit:</label>
+                <select id="height-unit" name="height-unit">
+                    <option value="meters">Meters</option>
+                    <option value="feet">Feet/Inches</option>
+                </select>
+                <div id="height-inputs">
+                    <div class="height-meters">
+                        <label for="height-m">Height (m):</label>
+                        <input type="number" id="height-m" min="0.5" max="3" step="0.01" placeholder="e.g., 1.75">
+                    </div>
+                    <div class="height-feet" style="display: none;">
+                        <label for="height-ft">Feet:</label>
+                        <input type="number" id="height-ft" min="1" max="8" step="1" placeholder="e.g., 5">
+                        <label for="height-in">Inches:</label>
+                        <input type="number" id="height-in" min="0" max="11" step="1" placeholder="e.g., 7">
+                    </div>
+                </div>
+                <label for="weight-unit">Weight Unit:</label>
+                <select id="weight-unit" name="weight-unit">
+                    <option value="kg">Kilograms</option>
+                    <option value="lbs">Pounds</option>
+                </select>
+                <div class="weight-input">
+                    <label for="weight">Weight:</label>
+                    <input type="number" id="weight" min="20" max="500" step="0.1" placeholder="e.g., 70">
+                </div>
+                <button type="button" id="calculate-bmi">Calculate BMI</button>
+                <p id="bmi-result">Your BMI: --</p>
+            </div>
+        </div>
+        <div id="result" style="display: none;">
+            <h3>Your Risk Assessment:</h3>
+            <img src="./images/heart-risk.png" alt="Heart Risk Icon" class="result-image">
+            <p id="predictionText"></p>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
